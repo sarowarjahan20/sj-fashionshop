@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - SJ Fashion</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="https://via.placeholder.com/150x50/3498db/ffffff?text=SJ+Fashion"
+            alt="SJ Fashion Logo"
+            class="logo-img"
+          />
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#men">Men</a></li>
+          <li><a href="index.html#women">Women</a></li>
+          <li>
+            <a href="#" id="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button class="close-cart">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-items">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span class="total-amount">$0.00</span>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+    <div class="cart-overlay"></div>
+
+    <main class="checkout-page">
+      <div class="checkout-container">
+        <h1>Checkout</h1>
+
+        <div class="checkout-summary">
+          <h2>Order Summary</h2>
+          <div class="checkout-items">
+            <!-- Cart items will be dynamically inserted here -->
+          </div>
+          <div class="checkout-total">
+            <span>Total:</span>
+            <span class="total-amount">$0.00</span>
+          </div>
+        </div>
+
+        <form id="checkout-form" class="checkout-form">
+          <div class="form-section">
+            <h2>Shipping Information</h2>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="address">Street Address</label>
+              <input type="text" id="address" name="address" required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required />
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" required />
+              </div>
+              <div class="form-group">
+                <label for="zipCode">ZIP Code</label>
+                <input type="text" id="zipCode" name="zipCode" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="country">Country</label>
+              <select id="country" name="country" required>
+                <option value="">Select a country</option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="UK">United Kingdom</option>
+                <option value="AU">Australia</option>
+                <option value="DE">Germany</option>
+                <option value="FR">France</option>
+                <option value="IT">Italy</option>
+                <option value="ES">Spain</option>
+                <option value="JP">Japan</option>
+                <option value="CN">China</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h2>Payment Information</h2>
+            <div class="form-group">
+              <label for="cardName">Name on Card</label>
+              <input type="text" id="cardName" name="cardName" required />
+            </div>
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input
+                type="text"
+                id="cardNumber"
+                name="cardNumber"
+                placeholder="1234 5678 9012 3456"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="expiryDate">Expiry Date</label>
+                <input
+                  type="text"
+                  id="expiryDate"
+                  name="expiryDate"
+                  placeholder="MM/YY"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input
+                  type="text"
+                  id="cvv"
+                  name="cvv"
+                  placeholder="123"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h2>Order Notes</h2>
+            <div class="form-group">
+              <label for="notes">Special instructions for delivery</label>
+              <textarea id="notes" name="notes" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button
+              type="button"
+              class="back-btn"
+              onclick="window.location.href='index.html'"
+            >
+              Back to Cart
+            </button>
+            <button type="submit" class="place-order-btn">Place Order</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo-section">
+          <img
+            src="https://via.placeholder.com/150x50/3498db/ffffff?text=SJ+Fashion"
+            alt="SJ Fashion Logo"
+            class="footer-logo"
+          />
+          <p class="footer-description">
+            SJ Fashion brings you the latest trends in men's and women's
+            clothing. Our mission is to provide high-quality, stylish clothing
+            at affordable prices.
+          </p>
+        </div>
+
+        <div class="footer-categories">
+          <h3>Categories</h3>
+          <ul>
+            <li><a href="index.html#men">Men's Clothing</a></li>
+            <li><a href="index.html#women">Women's Clothing</a></li>
+            <li><a href="index.html#weekly-offers">Weekly Offers</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Sale Items</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-location">
+          <h3>Our Locations</h3>
+          <ul>
+            <li>Rajshahi</li>
+            <li>Dhaka</li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 SJ Fashion. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button id="go-to-top" aria-label="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="checkout.js"></script>
+  </body>
+</html>
